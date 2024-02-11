@@ -22,11 +22,11 @@ function clearForm() {
   }
 }
 
-function formHandler(event) {
+function handleFormInput(event) {
   saveFromData();
 }
 
-function buttonHandler(event) {
+function handleSubmitButton(event) {
   event.preventDefault();
 
   const emailValue = feedbackForm.email.value.trim();
@@ -52,6 +52,6 @@ function inputDataPreload() {
   }
 }
 
-submitButton.addEventListener('click', buttonHandler);
-feedbackForm.addEventListener('input', formHandler);
+feedbackForm.addEventListener('submit', handleSubmitButton);
+feedbackForm.addEventListener('input', handleFormInput);
 document.addEventListener('DOMContentLoaded', inputDataPreload);
